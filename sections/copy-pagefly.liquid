@@ -1,0 +1,167 @@
+<div class="zx-product-landing">
+
+  <!-- ================= HERO SLIDER ================= -->
+  <div class="zx-slider-wrapper">
+    <div class="zx-slider">
+      <div class="zx-slide">
+        <img src="https://cdn.shopify.com/s/files/1/0797/9515/9291/files/Banner.jpg" alt="Banner 1">
+      </div>
+      <div class="zx-slide">
+        <img src="https://cdn.shopify.com/s/files/1/0797/9515/9291/files/Banner-2.png" alt="Banner 2">
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WAVE DIVIDER ================= -->
+  <div class="zx-wave">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <defs>
+        <mask id="zx-wave-mask">
+          <rect width="100%" height="100%" fill="white"/>
+          <path d="M0,120 C240,40 480,40 720,90 C960,140 1200,140 1440,90 L1440,200 L0,200 Z" fill="black"/>
+        </mask>
+      </defs>
+      <rect width="100%" height="100%" fill="#FFF8E3" mask="url(#zx-wave-mask)" />
+    </svg>
+  </div>
+
+  <!-- ================= PRICING GRID ================= -->
+  <div class="pricing-wrapper">
+
+    {% for i in (1..4) %}
+    <div class="price-card">
+      <div class="badge">RESULT ORIENTED</div>
+      <div class="check-icon">✔</div>
+
+      <div class="card-content">
+        <h3 class="duration">1 Month</h3>
+        <p class="glasses">60 Glasses</p>
+        <p class="sub">Pulp x 2 bottles</p>
+
+        <div class="price">₹ 1,273</div>
+        <div class="mrp">
+          <span class="strike">M.R.P ₹1698</span><br>
+          Inclusive of all taxes
+        </div>
+      </div>
+
+      <div class="save-ribbon">SAVE UPTO 25%</div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+</div>
+
+<!-- ================= STYLES ================= -->
+<style>
+.zx-product-landing { font-family: Arial, sans-serif; }
+
+/* Slider */
+.zx-slider-wrapper { overflow: hidden; }
+.zx-slider { display: flex; transition: transform 0.6s ease; }
+.zx-slide { min-width: 100%; }
+.zx-slide img { width: 100%; height: 70vh; object-fit: cover; }
+
+/* Wave */
+.zx-wave svg { display: block; height: 120px; }
+
+/* Pricing */
+.pricing-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 10px;
+}
+
+.price-card {
+  border: 2px solid #fb923c;
+  border-radius: 15px;
+  background: #fffcf6;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.badge {
+  background: #3f6259;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 0;
+}
+
+.check-icon {
+  position: absolute;
+  top: 42px;
+  right: 12px;
+  background: #f97316;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content { padding: 14px; }
+.duration { font-size: 18px; font-weight: 700; }
+.glasses { font-size: 18px; font-weight: 800; }
+.sub { font-size: 13px; color: #666; margin: 8px 0 15px; }
+.price { font-size: 22px; font-weight: 800; }
+.mrp { font-size: 12px; color: #fb923c; }
+.strike { text-decoration: line-through; }
+
+.save-ribbon {
+  background: #ff5f5f;
+  color: #fff;
+  font-size: 13px;
+  padding: 8px;
+  margin: 12px;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pricing-wrapper { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 600px) {
+  .zx-slide img { height: 45vh; }
+}
+</style>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".zx-slider");
+  const slides = document.querySelectorAll(".zx-slide");
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    slider.style.transform = "translateX(-" + (index * 100) + "%)";
+  }, 3500);
+});
+</script>
+
+{% schema %}
+{
+  "name": "Custom Product Landing",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Custom Product Landing"
+    }
+  ]
+}
+{% endschema %}

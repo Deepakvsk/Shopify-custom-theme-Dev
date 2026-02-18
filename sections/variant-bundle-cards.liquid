@@ -1,0 +1,304 @@
+{% if product and product.variants.size > 0 %}
+
+<form method="post" action="/cart/add" id="variant-form">
+
+<div class="pricing-wrapper">
+
+  {% for variant in product.variants %}
+  <label class="price-card {% if forloop.first %}active{% endif %}">
+
+    <input 
+      type="radio"
+      name="id"
+      value="{{ variant.id }}"
+      {% if forloop.first %}checked{% endif %}
+      hidden
+    >
+
+    <div class="badge">RESULT ORIENTED</div>
+    <div class="check-icon">✔</div>
+
+    <div class="card-content">
+      <h3 class="duration">
+        {{ variant.title }}
+      </h3>
+
+      <p class="glasses">
+        {{ variant.metafields.custom.glasses | default: "60 Glasses" }}
+      </p>
+
+      <p class="sub">
+        {{ variant.metafields.custom.subtitle | default: "Pulp x 2 bottles" }}
+      </p>
+
+      <div class="price">
+        {{ variant.price | money }}
+      </div>
+
+      {% if variant.compare_at_price > variant.price %}
+      <div class="mrp">
+        <span class="strike">
+          M.R.P {{ variant.compare_at_price | money }}
+        </span><br>
+        Inclusive of all taxes
+      </div>
+      {% endif %}
+    </div>
+
+    {% if variant.compare_at_price > variant.price %}
+    <div class="save-ribbon">
+      SAVE UPTO {{
+        variant.compare_at_price
+        | minus: variant.price
+        | times: 100
+        | divided_by: variant.compare_at_price
+      }}%
+    </div>
+    {% endif %}
+
+  </label>
+  {% endfor %}
+
+</div>
+
+<!-- BUTTONS -->
+<div style="max-width:900px;margin:20px auto;text-align:center;display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
+
+  <button type="submit" class="atc-btn">
+    ADD TO CART
+  </button>
+
+  <button type="button" class="buy-btn" id="buy-now-btn">
+    BUY IT NOW
+  </button>
+
+</div>
+
+</form>
+
+{% endif %}
+
+
+<style>
+.pricing-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.price-card {
+  border: 2px solid rgba(74, 79, 29, 0.74); /* Default Gray Border */
+  border-radius: 15px;
+  background: #fffcf6;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  cursor:pointer;
+}
+.price-card:hover {
+  border: 2px solid #fb923c; /* Orange Border */
+}
+
+/* Selected Card */
+.price-card.active {
+  border: 2px solid #fb923c; /* Orange Border */
+}
+
+/* Hide check icon by default */
+.check-icon {
+  position: absolute;
+  top: 42px;
+  right: 12px;
+  background: #f97316;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 11px;
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Show check icon only on selected */
+.price-card.active .check-icon {
+  display: flex;
+}
+
+.price-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.badge {
+  background: #3f6259;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.card-content {
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.duration {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.glasses {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+  color: #000;
+}
+
+.sub {
+  font-size: 13px;
+  color: #666;
+  margin: 10px 0 20px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.mrp {
+  font-size: 12px;
+  color: #fb923c;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.strike {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.save-ribbon {
+  background: #ff5f5f;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 0;
+  margin: 0 12px 12px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.atc-btn{
+  background:#2f3b1f;
+  color:#fff;
+  padding:14px 40px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.buy-btn{
+  background:#fff;
+  color:#2f3b1f;
+  padding:14px 40px;
+  border:2px solid #2f3b1f;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+}
+.buy-btn:hover{
+  background:#2f3b1f;
+  color:#fff;
+}
+
+
+@media (max-width: 1024px) {
+  .pricing-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .duration,
+  .glasses {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 6px 0;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".price-card");
+  const buyNowBtn = document.getElementById("buy-now-btn");
+  const form = document.getElementById("variant-form");
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      cards.forEach(c => c.classList.remove("active"));
+      card.classList.add("active");
+      card.querySelector("input").checked = true;
+    });
+  });
+
+  // BUY IT NOW
+  buyNowBtn.addEventListener("click", function () {
+    const selectedVariant = document.querySelector("input[name='id']:checked");
+    if (!selectedVariant) return;
+
+    const variantId = selectedVariant.value;
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: variantId,
+        quantity: 1
+      })
+    })
+    .then(() => {
+      window.location.href = '/checkout';
+    });
+  });
+
+});
+</script>
+
+
+{% schema %}
+{
+  "name": "Variant Pricing Cards",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Variant Pricing Cards"
+    }
+  ]
+}
+{% endschema %}

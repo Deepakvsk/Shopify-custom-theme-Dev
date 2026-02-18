@@ -17,7 +17,7 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "",
             "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
@@ -31,6 +31,8 @@
       "block_order": [
         "announcement_BxgCk9"
       ],
+      "disabled": true,
+      "custom_css": [],
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
@@ -39,6 +41,18 @@
         "divider_width": 1,
         "padding-block-start": 15,
         "padding-block-end": 15
+      }
+    },
+    "custom_liquid_C3DxiQ": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "Custom Announcement Liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"glow-announcement-bar\">\n  AYUZERA IS NOW WELLWITH\n</div>\n\n<style>\n.glow-announcement-bar {\n  width:100%;\n  background: #414217;\n  color: #fff;\n  padding: 15px 0px;\n  text-align: center;\n  font-size: 14px;\n  font-weight: 400;\n  letter-spacing: 0.4px;\n\n}\n\n/* subtle glow */\n.glow-announcement-bar::after {\n  content: \"\";\n  position: absolute;\n  inset: 0;\n  background: radial-gradient(\n    circle at center,\n    rgba(255, 255, 255, 0.18),\n    transparent 70%\n  );\n  opacity: 0.6;\n  animation: glow-pulse 3s ease-in-out infinite;\n  pointer-events: none;\n}\n\n@keyframes glow-pulse {\n  0%, 100% {\n    opacity: 0.4;\n  }\n  50% {\n    opacity: 0.8;\n  }\n}\n</style>",
+        "color_scheme": "",
+        "section_width": "full-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "header_section": {
@@ -80,7 +94,7 @@
         }
       },
       "settings": {
-        "logo_position": "left",
+        "logo_position": "center",
         "menu_position": "left",
         "menu_row": "top",
         "show_search": true,
@@ -98,7 +112,7 @@
         "enable_sticky_header": "always",
         "divider_width": 0,
         "divider_size": "page-width",
-        "border_width": 0,
+        "border_width": 1,
         "color_scheme_top": "scheme-1",
         "color_scheme_bottom": "",
         "color_scheme_transparent": "scheme-6",
@@ -113,6 +127,7 @@
   },
   "order": [
     "header_announcements_9jGBFp",
+    "custom_liquid_C3DxiQ",
     "header_section"
   ]
 }

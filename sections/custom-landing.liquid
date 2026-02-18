@@ -1,0 +1,75 @@
+<div class="zx-landing-2026">
+
+  <section class="zx-hero">
+    <h1>Next Level Product</h1>
+    <p>Premium quality for modern lifestyle</p>
+    <a href="/collections/all" class="zx-btn">Shop Now</a>
+  </section>
+
+  <section class="zx-features">
+    <div class="zx-feature">
+      <h3>Fast Delivery</h3>
+      <p>Get your product within 2-3 days.</p>
+    </div>
+    <div class="zx-feature">
+      <h3>Premium Quality</h3>
+      <p>Crafted with top materials.</p>
+    </div>
+    <div class="zx-feature">
+      <h3>24/7 Support</h3>
+      <p>We are always here to help you.</p>
+    </div>
+  </section>
+
+</div>
+
+<style>
+.zx-landing-2026 { font-family: Arial; }
+.zx-hero {
+  height: 100vh;
+  background: linear-gradient(135deg,#111,#333);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.zx-btn {
+  padding:12px 30px;
+  background:white;
+  color:black;
+  text-decoration:none;
+  border-radius:30px;
+}
+.zx-features {
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:80px 20px;
+  flex-wrap:wrap;
+  background:#f5f5f5;
+}
+.zx-feature {
+  background:white;
+  padding:30px;
+  width:280px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+@media(max-width:768px){
+  .zx-features{flex-direction:column;align-items:center;}
+}
+</style>
+
+{% schema %}
+{
+  "name": "Custom Landing",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Custom Landing"
+    }
+  ]
+}
+{% endschema %}

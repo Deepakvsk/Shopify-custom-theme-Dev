@@ -1,0 +1,564 @@
+
+
+    <style>
+        @import url('https://adtech2454.netlify.app/style.css');
+    </style>
+
+
+
+    <!-- header section start -->
+    {% comment %} <header class="header" id="header">
+        <div class="info">
+            <div class="info-cont">
+                <span>
+                    <h3 class="sales">Sales Enquiry</h3>
+                </span>
+                <span>
+                    <h3><a href="#"><i class="fa-solid fa-phone-volume"></i> +91 7746646411</a></h3>
+                </span>
+                <span>
+                    <h3><a href="#"><i class="fa-solid fa-envelope"></i> Sales@advikatech.com</a></h3>
+                </span>
+            </div>
+            <div class="info-social">
+                <div class="f-sign">
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i> Sign Up with Facebook
+                    </a>
+                </div>
+                <h3 class="follow">Follow Us</h3>
+                <div class="icon">
+                    <a href="#"> <i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"> <i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar" id="navbar">
+            <div class="logo">
+                <h2 class="logoName"><a href='/'><i class="fa-solid fa-book-open-reader"></i> ADTech</a></h2>
+            </div>
+            <ul class="list" id="list">
+                <li class="list-item"><a href="#">Home</a></li>
+                <li class="list-item dropdown"><a href="#">Services <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="submenu">
+                        <li class="sublist"><a href="#">Academin Mangement</a></li>
+                        <li class="sublist"><a href="#">Admission Management</a></li>
+                        <li class="sublist"><a href="#">Attendance Management</a></li>
+                        <li class="sublist"><a href="#">Examination Management</a></li>
+                        <li class="sublist"><a href="#">Fees Management</a></li>
+                        <li class="sublist"><a href="#">Student Management</a></li>
+                        <li class="sublist"><a href="#">Finanace Management</a></li>
+                        <li class="sublist"><a href="#">Teacher / Staff Management</a></li>
+                    </ul>
+                </li>
+                <li class="list-item"><a href='/pages/pricing'>Pricing</a></li>
+                <li class="list-item"><a href='/pages/about'>About Us</a></li>
+            </ul>
+            <div class="btn-box">
+                <button class="btn" id="openForm">Contact Us</button>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header> {% endcomment %}
+    <!-- header section end -->
+    <!-- contact us form show on modal or popUp -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+
+            <div class="form-container">
+                <h1 class="form-title">We're Always Ready</h1>
+                <p class="form-subtitle">Get in touch with your Technology Partner.</p>
+
+                <form class="contact-form">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="fullname" class="input-field" placeholder=" " required>
+                            <label for="fullname" class="input-label">Full Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" class="input-field" placeholder=" " required>
+                            <label for="email" class="input-label">Email ID</label>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="mobile" class="input-field" placeholder=" " required>
+                            <label for="mobile" class="input-label">Mobile Number</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="school" class="input-field" placeholder=" " required>
+                            <label for="school" class="input-label">School/Organization</label>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="city" class="input-field" placeholder=" " required>
+                            <label for="city" class="input-label">City</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="website" class="input-field" placeholder=" " required>
+                            <label for="website" class="input-label">Website</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <input type="text" id="address" class="input-field" placeholder=" " required>
+                        <label for="address" class="input-label">Address</label>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <textarea id="message" class="input-field" placeholder=" " rows="4"></textarea>
+                        <label for="message" class="input-label">Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <div class="spinner" id="btnSpinner"></div>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- contact us section end -->
+    <!-- hero section start -->
+    <section class="hero">
+        <div class="hero-left">
+            <h2 class="tagline">Empowering the Next Generation of Learning.</h2>
+            <p class="subtag">
+                Experience the next generation of school management. Scalable, secure, and cloud-based tools designed to
+                elevate academic standards and administrative excellence.
+            </p>
+        </div>
+        <div class="hero-right">
+            <img src="./image/sec-img.png" alt="slide1">
+            <img src="./image/first-img.png" class="img1" alt="">
+            <img src="./image/third-img.png" class="img2" alt="">
+        </div>
+    </section>
+    <!-- hero section end -->
+
+    <!-- Our Services start -->
+    <section class="our-services">
+        <div class="service-offer">
+            <h2 class="heading">Our Comprehensive Offerings</h2>
+            <p class="para">
+                Join the League of India's most futuristic and comprehensive<br> School Management Software that meets
+                all
+                your school-specific needs.
+            </p>
+        </div>
+        <div class="service-btn">
+            <button type="submit" class="btn-offer" id="btn1">School ERP</button>
+            <button type="submit" class="btn-offer" id="btn2">E-Learning</button>
+            <button type="submit" class="btn-offer" id="btn3">Website</button>
+            <button type="submit" class="btn-offer" id="btn4">Smart Technology</button>
+        </div>
+        <div class="service-container" id="service-container">
+            <div class="service-box">
+                <div class="box" id="box">
+                    <div class="head-tag">
+                        <img src="./image//academics.svg" alt="">
+                        <h3>academics</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">
+                            In this digital era, from banking to educatio
+                            most things have gone online.</p>
+                    </div>
+                    <span class="read" id="read1">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+                <div class="box">
+                    <div class="head-tag">
+                        <img src="./image/administration.svg" alt="">
+                        <h3>administration</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">In this digital era, from banking to educatio most things have gone
+                            online.</p>
+                    </div>
+                    <span class="read" id="read2">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+                <div class="box">
+                    <div class="head-tag">
+                        <img src="./image/finance.svg" alt="">
+                        <h3>finance</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">In this digital era, from banking to educatio most things have gone
+                            online.</p>
+                    </div>
+                    <span class="read" id="read3">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+                <div class="box">
+                    <div class="head-tag">
+                        <img src="./image/hr.svg" alt="">
+                        <h3>hr</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">In this digital era, from banking to educatio most things have gone
+                            online.</p>
+                    </div>
+                    <span class="read" id="read4">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="box" id="box">
+                    <div class="head-tag">
+                        <img src="./image/Online-Assessment.svg" alt="">
+                        <h3>online assessment</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">
+                            This robust school ERP software allows teachers to conduct quizzes both subjective and
+                            objective.
+                        </p>
+                    </div>
+                    <span class="read" id="read1">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+                <div class="box">
+                    <div class="head-tag">
+                        <img src="./image/Digital-Content.svg" alt="">
+                        <h3>Digital Content</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">
+                            Using the e-learning feature, students can access the learning resources in various formats
+                            like.
+                        </p>
+                    </div>
+                    <span class="read" id="read2">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+                <div class="box">
+                    <div class="head-tag">
+                        <img src="./image/Online-Assignment.svg" alt="">
+                        <h3>online assignment</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">
+                            Schools can create different types of assignment, homework, projectwork,and other, It can
+                            be.
+                        </p>
+                    </div>
+                    <span class="read" id="read3">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+                <div class="box">
+                    <div class="head-tag">
+                        <img src="./image/Exam-Proctoring.svg" alt="">
+                        <h3>exam proctoring</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">
+                            ADTech is proud to introduce PowerTEST-a powerful online examination proctoring solution.
+                        </p>
+                    </div>
+                    <span class="read" id="read4">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="box">
+                    <div class="head-tag">
+                        <img src="./image/CMS.svg" alt="">
+                        <h3>CMS</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">
+                            The content management here comprises the relevent content that can be updated on the
+                            website.
+                        </p>
+                    </div>
+                    <span class="read" id="read4">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+                <div class="box">
+                    <div class="head-tag">
+                        <img src="./image/SEO-and-SMO.svg" alt="">
+                        <h3>SEO and SMO</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">
+                            Search Engine Optimisation is a potent mechanism which helps to enhance the online
+                            visibility
+                        </p>
+                    </div>
+                    <span class="read" id="read4">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+                <div class="box">
+                    <div class="head-tag">
+                        <img src="./image/Responsive-Website.svg" alt="">
+                        <h3>Responsive Website</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">
+                            ADTech technology has hands on Experience in developing responsive websites that are auto.
+                        </p>
+                    </div>
+                    <span class="read" id="read4">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+                <div class="box">
+                    <div class="head-tag">
+                        <img src="./image/Dynamic-Content.svg" alt="">
+                        <h3>Dynamic Content</h3>
+                    </div>
+                    <div>
+                        <p class="service-tagline">
+                            Integrated with ADTech ERP for Enquiries, Birthdays, Circular, Notices, Calender, News,
+                            Images.</p>
+                    </div>
+                    <span class="read" id="read4">Read More <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="box">
+                    <h3>Smart Technology Content</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Services end -->
+
+    <!-- why join with us section start -->
+    <section class="join-with">
+        <div class="adjoin">
+            <h4>why adtech</h4>
+            <h3>Why ADTech school Management software?</h3>
+            <p>
+                ADTech ERP has many salient features that a school requires for the smooth functioning of day-to-day
+                tasks. This Most advanced School ERP allows schools to go paperless and to have control over each and
+                every report with just a click.
+                There are several reasons to have ADTech ERP, a few of which are mentioned below.
+            </p>
+        </div>
+        <div class="circle"></div>
+        <div class="joinbtn">
+            <div class="button">
+                <button class="adjoinbtn active" data-type="interface" type="button"><i
+                        class="fa-solid fa-computer"></i>
+                    Interface</button>
+                <button class="adjoinbtn" data-type="security" type="button"><i class="fa-solid fa-file-shield"></i>
+                    Security</button>
+                <button class="adjoinbtn" data-type="support" type="button"><i class="fa-solid fa-phone-volume"></i>
+                    Support</button>
+                <button class="adjoinbtn" data-type="accessible" type="button"><i
+                        class="fa-regular fa-calendar-days"></i>
+                    Accessibility</button>
+                <button class="adjoinbtn" data-type="migrations" type="button"><i class="fa-brands fa-dashcube"></i>
+                    Migrations</button>
+                <button class="adjoinbtn" data-type="communication" type="button"><i class="fa-solid fa-comments"></i>
+                    Communications</button>
+                <button class="adjoinbtn" data-type="paperless" type="button"><i class="fa-solid fa-newspaper"></i>
+                    Paperless</button>
+            </div>
+        </div>
+        <div class="explain" id="explain">
+
+        </div>
+    </section>
+    <!-- why join with us section end -->
+    <!-- our client section start -->
+    <section class="client">
+        <h4>our clients</h4>
+        <h2>leading school that we serve</h2>
+        <div class="client-list">
+            <div class="client-track">
+                <div class="client-name">
+                    <img src="./image/ivy.png" alt="">
+                </div>
+                <div class="client-name">
+                    <img src="./image/little_flower.png" alt="">
+                </div>
+                <div class="client-name">
+                    <img src="./image/mayoor.png" alt="">
+                </div>
+                <div class="client-name">
+                    <img src="./image/mcs.png" alt="">
+                </div>
+                <div class="client-name">
+                    <img src="./image/Metas-Adventist-School.png" alt="">
+                </div>
+                <div class="client-name">
+                    <img src="./image/mr_jaipuria.png" alt="">
+                </div>
+                <div class="client-name">
+                    <img src="./image/ran.png" alt="">
+                </div>
+                <div class="client-name">
+                    <img src="./image/rd-rajpal-school.png" alt="">
+                </div>
+                <div class="client-name">
+                    <img src="./image/sapphire.png" alt="">
+                </div>
+                <div class="client-name">
+                    <img src="./image/shreejee.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- our client section end -->
+
+    <!-- testimonial section start -->
+
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <div class="testimonial-intro">
+                <span class="sub-heading">TESTIMONIALS</span>
+                <h1>We Go Extra Miles Together</h1>
+                <p>We've got decades-long relationships with customers. See what a customer says.</p>
+
+                <div class="navigation-controls">
+                    <button id="prevBtn" class="nav-btn"><i class="fa-solid fa-angle-left"></i></button>
+                    <button id="nextBtn" class="nav-btn"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+
+            <div class="slider-wrapper" id="sliderWrapper">
+                <div class="testimonial-card">
+                    <div class="card-header">
+                        <div class="profile-img">
+                            <img src="./image/little_flower.png" alt="Logo">
+                        </div>
+                        <span class="author-name">Dr. Anupam Jagga</span>
+                    </div>
+                    <h3>Delhi Public School Ranipur</h3>
+                    <p>Evaluated 30+ latest technology and found this to be the most efficient solution for our campus.
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="card-header">
+                        <div class="profile-img">
+                            <img src="./image/little_flower.png" alt="Logo">
+                        </div>
+                        <span class="author-name">Mr. Rohit Dua</span>
+                    </div>
+                    <h3>Little Flower Group of Schools</h3>
+                    <p>We have been using Edunext ERP for the last five years and I must say that we have had a very
+                        pleasant experience. Our school is totally managed through Edunext.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="card-header">
+                        <div class="profile-img">
+                            <img src="./image/little_flower.png" alt="Logo">
+                        </div>
+                        <span class="author-name">Sarah Jenkins</span>
+                    </div>
+                    <h3>St. Xavier Academy</h3>
+                    <p>The access speed of the software is tremendous and the support team is always ready to help us
+                        with instant solutions.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="card-header">
+                        <div class="profile-img">
+                            <img src="./image/little_flower.png" alt="Logo">
+                        </div>
+                        <span class="author-name">Sarah Jenkins</span>
+                    </div>
+                    <h3>St. Xavier Academy</h3>
+                    <p>The access speed of the software is tremendous and the support team is always ready to help us
+                        with instant solutions.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="card-header">
+                        <div class="profile-img">
+                            <img src="./image/little_flower.png" alt="Logo">
+                        </div>
+                        <span class="author-name">Sarah Jenkins</span>
+                    </div>
+                    <h3>St. Xavier Academy</h3>
+                    <p>The access speed of the software is tremendous and the support team is always ready to help us
+                        with instant solutions.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="card-header">
+                        <div class="profile-img">
+                            <img src="./image/little_flower.png" alt="Logo">
+                        </div>
+                        <span class="author-name">Sarah Jenkins</span>
+                    </div>
+                    <h3>St. Xavier Academy</h3>
+                    <p>The access speed of the software is tremendous and the support team is always ready to help us
+                        with instant solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonial section end -->
+
+    <!-- footer section start -->
+    <footer class="footer">
+        <section class="footer-section">
+            <div class="web-info">
+                <h2 class="logoName"><i class="fa-solid fa-book-open-reader"></i> ADTech.</h2>
+                <span class="info-about">
+                    <p>ADTech ERP is India's Newest School
+                        Management Software for students, parents,
+                        teacher and management</p>
+                </span>
+            </div>
+            <div class="services">
+                <h3 class="title">SERVICES</h3>
+                <ul class="footer-list">
+                    <li class="footer-list-item"><a href="#">E-Learning Software</a></li>
+                    <li class="footer-list-item"><a href="#"> Finanace Management</a></li>
+                    <li class="footer-list-item"><a href="#">Fee Management</a></li>
+                    <li class="footer-list-item"><a href="#">Visitor Management</a></li>
+                    <li class="footer-list-item"><a href="#">Student Management</a></li>
+                </ul>
+            </div>
+            <div class="services services-align">
+                <ul class="footer-list">
+                    <li class="footer-list-item"><a href="#">Transport App</a></li>
+                    <li class="footer-list-item"><a href="#">HR Management</a></li>
+                    <li class="footer-list-item"><a href="#">Admission Management</a></li>
+                    <li class="footer-list-item"><a href="#">Privacy Policy</a></li>
+                    <li class="footer-list-item"><a href="#">Library Management</a></li>
+                </ul>
+            </div>
+            <div class="services services-align hide">
+                <ul class="footer-list">
+                    <li class="footer-list-item"><a href="#">Staff Payroll</a></li>
+                    <li class="footer-list-item"><a href="#">Digital Content</a></li>
+                    <li class="footer-list-item"><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </section>
+        <hr />
+        <section class="footer-bottom">
+            <div class="left">
+                <p>2025 <a href="#home">Advika Technologies Pvt. Ltd.</a> | All Right Reserved.</p>
+            </div>
+            <div class="right">
+                <h3>Follow Us</h3>
+                <div class="footer-icon">
+                    <a href="#"> <i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"> <i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- footer section end -->
+    <!-- down arrow button  -->
+    <button id="backToTop" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <script src="https://adtech2454.netlify.app/script.js"></script>
+
+    {% schema %}
+{
+  "name": "Custom erp design",
+  "settings": []
+}
+{% endschema %}
