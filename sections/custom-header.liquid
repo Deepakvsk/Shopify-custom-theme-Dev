@@ -1,0 +1,122 @@
+<style>
+/* Top Announcement Bar */
+.top-bar {
+  background: #2e4d2f;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  padding: 8px 10px;
+}
+
+/* Main Header */
+.custom-header {
+  padding: 15px 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Search */
+.header-search input {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 220px;
+}
+
+/* Logo */
+.header-logo img {
+  max-height: 60px;
+}
+
+/* Icons */
+.header-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.header-icons a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Navigation */
+.custom-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 12px 0;
+  font-weight: 600;
+}
+
+.custom-nav a {
+  text-decoration: none;
+  color: #2e4d2f;
+  font-size: 15px;
+  position: relative;
+}
+
+.custom-nav a:hover {
+  color: #1f331f;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+  .header-row{
+    flex-direction: column;
+    gap: 15px;
+  }
+  .custom-nav{
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+</style>
+
+<!-- Top Offer Bar -->
+<div class="top-bar">
+  🎉 More This Holi! 18% Off, code: HOLI18 | Members: 20% OFF
+</div>
+
+<header class="custom-header">
+
+  <div class="header-row">
+    
+    <!-- Search -->
+    <div class="header-search">
+      <input type="text" placeholder="Search">
+    </div>
+
+    <!-- Logo -->
+    <div class="header-logo">
+      <a href="{{ routes.root_url }}">
+        <img src="{{ settings.logo | image_url }}" alt="{{ shop.name }}">
+      </a>
+    </div>
+
+    <!-- Icons -->
+    <div class="header-icons">
+      <a href="{{ routes.account_url }}">👤</a>
+      <a href="{{ routes.cart_url }}">🛒</a>
+    </div>
+
+  </div>
+
+  <!-- Navigation -->
+  <nav class="custom-nav">
+    <a href="/collections/ghee">GHEE</a>
+    <a href="/collections/atta">ATTA</a>
+    <a href="#">SHOP BY CATEGORY</a>
+    <a href="#">JOIN COLLECTIVE</a>
+    <a href="#">SHOP BY CONCERN</a>
+    <a href="#">FARM LIFE</a>
+    <a href="#">CUSTOMERS</a>
+  </nav>
+
+</header>
