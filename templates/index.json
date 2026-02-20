@@ -207,10 +207,56 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "video_product_reels_fVDc97": {
+      "type": "video-product-reels",
+      "blocks": {
+        "video_block_K7LFjE": {
+          "type": "video_block",
+          "settings": {
+            "video": "https://cdn.shopify.com/videos/c/vp/c73ff84b30db48c08d1579cd07184b45/c73ff84b30db48c08d1579cd07184b45.HD-720p-1.6Mbps-64179425.mp4",
+            "product": "sea-buckthorn-gummies"
+          }
+        },
+        "video_block_mqEpMj": {
+          "type": "video_block",
+          "settings": {
+            "video": "https://cdn.shopify.com/videos/c/vp/343fb175fe0f428ba5f779f206e594cb/343fb175fe0f428ba5f779f206e594cb.HD-1080p-2.5Mbps-64178729.mp4",
+            "product": "sea-buckthorn-juice-pulp-300ml"
+          }
+        },
+        "video_block_jMdwAb": {
+          "type": "video_block",
+          "settings": {
+            "video": "https://cdn.shopify.com/videos/c/vp/81ad120402c64b05ab162465585ec121/81ad120402c64b05ab162465585ec121.HD-1080p-2.5Mbps-64175619.mp4",
+            "product": "sea-buckthorn-gummies"
+          }
+        }
+      },
+      "block_order": [
+        "video_block_K7LFjE",
+        "video_block_mqEpMj",
+        "video_block_jMdwAb"
+      ],
+      "name": "Video Product Reels",
+      "settings": {}
+    },
+    "custom_liquid_wYgjqE": {
+      "type": "custom-liquid",
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "<style>\n\n.next_section_space{\n\nmargin-top:300px;\n\n}\n\n</style>\n\n<div class=\"next_section_space\">Next Section</div>",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "custom_homepage_khMTaz",
-    "product_list_fa6P9H"
+    "product_list_fa6P9H",
+    "video_product_reels_fVDc97",
+    "custom_liquid_wYgjqE"
   ]
 }
