@@ -3,22 +3,24 @@
 /* ===== GENERAL REFINEMENTS === */
 /* ============================= */
 :root {
-  --primary-color: #185E37;
+  --primary-color: #424112;
   --accent-color: #2e4d2f;
-  --bg-light: #f6f6f6;
-  --text-dark: #333;
+  --bg-light: #f8f8f8;
+  --text-dark: #222;
+  --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-body { margin: 0; font-family: 'Inter', sans-serif; }
+body { margin: 0; font-family: 'Inter', sans-serif; color: var(--text-dark); }
 
 .top-bar {
   background: #414217;
   color: #fff;
-  font-size: 12px;
+  font-size: 11px;
   text-align: center;
-  padding: 10px 15px;
-  letter-spacing: 1px;
+  padding: 8px 15px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
+  font-weight: 500;
 }
 
 /* ============================= */
@@ -28,158 +30,153 @@ body { margin: 0; font-family: 'Inter', sans-serif; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #fff;
-  border-bottom: 1px solid #eee;
+  background: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .header-main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 5%;
+  padding: 12px 5%;
 }
 
 /* ============================= */
 /* ===== SEARCH BOX (DESKTOP) == */
 /* ============================= */
 .header-search input {
-  width: 280px;
-  padding: 10px 15px;
-  border: 1px solid #e0e0e0;
+  width: 240px;
+  padding: 10px 18px;
+  border: 1px solid #e8e8e8;
   border-radius: 50px;
   font-size: 13px;
-  background: var(--bg-light);
-  transition: all 0.3s;
+  background: #fff;
+  transition: var(--transition);
 }
 
 .header-search input:focus {
   border-color: var(--primary-color);
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(24, 94, 55, 0.1);
+  box-shadow: 0 0 0 4px rgba(66, 65, 18, 0.05);
+  outline: none;
 }
 
 .header-logo img {
-  max-height: 30px;
+  max-height: 32px;
+  display: block;
 }
 
 .header-icons {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 18px;
 }
 
-.header-icons a { position: relative; color: var(--primary-color); }
+.header-icons a { position: relative; color: var(--primary-color); display: flex; align-items: center; text-decoration: none; }
 
 /* ============================= */
-/* ===== HAMBURGER SETUP ======= */
-/* ============================= */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-/* ============================= */
-/* ===== DESKTOP NAVIGATION ==== */
+/* ===== DESKTOP TOP NAV ======= */
 /* ============================= */
 .desktop-top-nav {
   display: flex;
   justify-content: center;
   gap: 30px;
-  {% comment %} padding: 15px 0; {% endcomment %}
-  {% comment %} border-top: 1px solid #f9f9f9; {% endcomment %}
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .desktop-top-nav > li > a {
   text-decoration: none;
   color: var(--primary-color);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
-
+/* ================================= */
+/* ===== HIDDEN SCROLLBAR NAV ====== */
+/* ================================= */
 .desktop-nav {
   display: flex;
-  justify-content: center;
-  {% comment %} gap: 10px; {% endcomment %}
-  border-top: 1px solid #f9f9f9;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid #f5f5f5;
   list-style: none;
   margin: 0;
+  padding: 0 5%;
+  overflow-x: auto; 
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar { display: none; }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 
 .desktop-nav > li {
-   position: static;
-  padding: 10px 10px;
- }
+  position: static;
+  padding: 12px 18px;
+  flex: 0 0 auto;
+}
 
 .desktop-nav > li > a {
   text-decoration: none;
   color: var(--primary-color);
   font-size: 13px;
-  font-weight: 00;
-  letter-spacing: 0.5px;
-  text-transform: capitalize;
-  transition: 0.3s;
+  font-weight: 500;
+  transition: var(--transition);
 }
 
-.desktop-nav >li:hover{
+.desktop-nav > li:hover { background-color: #fcfcfc; }
 
-  color:white;
-background-color: #f6f6f6a8;
- {% comment %} border-left: 1px solid #f9f9f9;
-  border-right: 1px solid #f9f9f9; {% endcomment %}
-
-}
-
-/* Mega Menu Centering */
+/* ============================= */
+/* ===== MEGA MENU CLEANUP ===== */
+/* ============================= */
 .mega-menu {
   position: absolute;
   left: 0;
   width: 100%;
-  background: #fff;
+  background: #ffffff; /* Explicit white */
   top: 100%;
   display: none;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-  border-top: 1px solid #eee;
-  padding: 50px 0;
-  z-index: 100;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  border-top: 1px solid #f0f0f0;
+  padding: 40px 0;
+  z-index: 1100;
 }
 
-.desktop-nav li:hover .mega-menu { display: block; }
+.desktop-top-nav li:hover .mega-menu { display: block; }
 
 .mega-inner {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 30px;
+  padding: 0 20px;
 }
 
 .mega-column h4 {
   color: var(--primary-color);
-  margin-bottom: 20px;
-  font-size: 14px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .mega-column a {
   display: block;
-  color: #666;
+  color: #555;
   text-decoration: none;
   font-size: 13px;
-  padding: 8px 0;
+  padding: 5px 0;
   transition: 0.2s;
 }
 
-.mega-column a:hover { color: var(--primary-color); transform: translateX(5px); }
+.mega-column a:hover { color: var(--primary-color); padding-left: 5px; }
 
 /* ============================= */
 /* ===== MOBILE SIDEBAR ======== */
@@ -188,78 +185,104 @@ background-color: #f6f6f6a8;
   position: fixed;
   top: 0;
   left: -100%;
-  width: 300px;
+  width: 85%;
+  max-width: 320px;
   height: 100%;
   background: #fff;
   z-index: 2000;
   transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 30px;
-  box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .mobile-sidebar.active { left: 0; }
 
 .sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
 }
 
-.close-menu { background: none; border: none; font-size: 24px; cursor: pointer; }
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
 
-.mobile-nav-links { list-style: none; padding: 0; }
+.sidebar-section-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #999;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  display: block;
+}
 
-.mobile-nav-links li { border-bottom: 1px solid #f0f0f0; }
+.mobile-nav-links { list-style: none; padding: 0; margin: 0 0 30px 0; }
 
 .mobile-nav-links a {
   display: block;
-  padding: 15px 0;
+  padding: 12px 0;
   color: var(--primary-color);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.sidebar-footer {
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: none;
 }
 
 .sidebar-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.3s;
-  z-index: 1999;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  visibility: hidden; opacity: 0;
+  transition: 0.3s; z-index: 1999;
 }
 
 .sidebar-overlay.active { visibility: visible; opacity: 1; }
-
-
-.header_logo_location_container{
-
-  display: flex; 
-  justify-content:space-between;
-  gap:15px;
-}
-
-.Location_Part{
-display: flex;
-}
-
 
 /* ============================= */
 /* ===== RESPONSIVE HUD ======== */
 /* ============================= */
 @media (max-width: 990px) {
-  .desktop-nav, .header-search { display: none; }
+  .desktop-nav, .header-search, .desktop-top-nav { display: none; }
   
-  .menu-toggle { display: block; order: 1; }
-  .header-logo { order: 2; flex-grow: 1; text-align: center; }
-  .header-icons { order: 3; gap: 15px; }
+  .menu-toggle { display: block; }
   
-  .header-main { padding: 12px 20px; }
+  /* Centralized Logo Position */
+  .header-main { 
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  
+  .header_logo_location_container { 
+    grid-column: 2;
+  }
+  
+  .header-icons { 
+    grid-column: 3;
+    justify-content: flex-end;
+  }
+  
+  .menu-toggle {
+    grid-column: 1;
+  }
 }
 </style>
 
@@ -267,127 +290,110 @@ display: flex;
 
 <div class="mobile-sidebar" id="mobileSidebar">
   <div class="sidebar-header">
-    <span style="font-weight: bold; color: #185E37;">MENU</span>
-    <button class="close-menu" onclick="toggleMenu()">&times;</button>
+    <img src="{{ settings.logo | image_url }}" style="max-height: 35px; width: auto">
+    <button class="close-menu" style="background:none; border:none; font-size:30px; cursor:pointer;" onclick="toggleMenu()">&times;</button>
   </div>
-  <ul class="mobile-nav-links">
-    <li><a href="/collections/all">✨ BEST SELLERS</a></li>
-    <li><a href="/collections/gut-health">GUT HEALTH</a></li>
-    <li><a href="/collections/skin-care">SKIN CARE</a></li>
-    <li><a href="/collections/hair-care">HAIR CARE</a></li>
-    <li><a href="/collections/all">SHOP ALL PRODUCTS</a></li>
-    <li><a href="/pages/track-order">TRACK ORDER</a></li>
-    <li><a href="/pages/our-story">OUR STORY</a></li>
-    <li><a href="/pages/contact">HELP & SUPPORT</a></li>
-    <li><a href="/account/login">MY ACCOUNT</a></li>
-  </ul>
+  
+  <div class="sidebar-content">
+    <span class="sidebar-section-title">Shop Categories</span>
+    <ul class="mobile-nav-links">
+      <li><a href="/collections/all">✨ Best Sellers</a></li>
+      <li><a href="/collections/gut-health">Gut Health</a></li>
+      <li><a href="/collections/skin-care">Skin Care</a></li>
+      <li><a href="/collections/hair-care">Hair Care</a></li>
+      <li><a href="/collections/all">Shop All</a></li>
+    </ul>
+
+    <span class="sidebar-section-title">Account & Support</span>
+    <ul class="mobile-nav-links">
+      <li><a href="/pages/track-order">Track Order</a></li>
+      <li><a href="/pages/our-story">Our Story</a></li>
+      <li><a href="/account/login">My Account</a></li>
+    </ul>
+  </div>
+  
+  <div class="sidebar-footer">
+    <p style="font-size: 12px; color: #666; margin: 0;">Need help? Contact Support</p>
+  </div>
 </div>
 
 <div class="top-bar">
   🎉 More This Holi! 18% Off, code: HOLI18 
-  {% comment %} | Members: 20% OFF {% endcomment %}
 </div>
 
 <header class="premium-header">
   <div class="header-main">
     
-    {% comment %} <button class="menu-toggle" onclick="toggleMenu()">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#185E37" stroke-width="2">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-    </button> {% endcomment %}
-
-   
-
-   <div class="header_logo_location_container">
-       <button class="menu-toggle" onclick="toggleMenu()">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#185E37" stroke-width="2">
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2">
         <line x1="3" y1="12" x2="21" y2="12"></line>
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="18" x2="21" y2="18"></line>
       </svg>
     </button>
- <div class="header-logo">
-      <a href="{{ routes.root_url }}">
-        <img src="{{ settings.logo | image_url }}" alt="{{ shop.name }}">
-      </a>
+
+    <div class="header_logo_location_container">
+      <div class="header-logo">
+        <a href="{{ routes.root_url }}">
+          <img src="{{ settings.logo | image_url }}" alt="{{ shop.name }}">
+        </a>
+      </div>
     </div>
 
-    {% comment %} <div class="Location_Part">
-
-        <div>
-          <svg width="20" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.5.2.7.2.2 0 .5-.1.7-.2.3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8zm0 17.7c-2.1-2-6-6.3-6-9.7 0-3.3 2.7-6 6-6s6 2.7 6 6-3.9 7.7-6 9.7zM12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#0D0D0D"/></svg>
-        </div>
-        <div>
-          <p>Delivering to Mumbai 400001</p>
-          <p>Update location1</p>
-        </div>
-   
-    </div> {% endcomment %}
-
-   </div>
-
-   <div>
     <ul class="desktop-top-nav">
-    <li><a href="/collections/gut-health">GUT HEALTH</a></li>
-    <li><a href="/collections/skin-care">SKIN CARE</a></li>
-       <li>
-      <a href="#">SHOP BY CONCERN ▾</a>
-      <div class="mega-menu">
-        <div class="mega-inner">
-          <div class="mega-column">
-            <h4>SKIN CARE</h4>
-            <a href="#">Night Cream</a><a href="#">Face Cleanser</a><a href="#">Sunscreen SPF 50</a>
-          </div>
-          <div class="mega-column">
-            <h4>HAIR CARE</h4>
-            <a href="#">Growth Oil</a><a href="#">Cleanser</a><a href="#">Serum</a>
-          </div>
-          <div class="mega-column">
-            <h4>GUT & HEALTH</h4>
-            <a href="#">Digestive Mix</a><a href="#">Wellness Capsules</a><a href="#">Fruit Tea</a>
-          </div>
-          <div class="mega-column" style="background: #f9f9f9; padding: 15px; border-radius: 8px;">
-            <h4>BEST SELLERS</h4>
-            <p style="font-size: 12px; color: #666;">Explore our most loved wellness rituals.</p>
-            <a href="#" class="mega-btn">SHOP ALL</a>
+      <li><a href="/collections/gut-health">GUT HEALTH</a></li>
+      <li><a href="/collections/skin-care">SKIN CARE</a></li>
+      <li>
+        <a href="#">SHOP BY CONCERN ▾</a>
+        <div class="mega-menu">
+          <div class="mega-inner">
+            <div class="mega-column">
+              <h4>SKIN CARE</h4>
+              <a href="#">Night Cream</a><a href="#">Face Cleanser</a><a href="#">Sunscreen SPF 50</a>
+            </div>
+            <div class="mega-column">
+              <h4>HAIR CARE</h4>
+              <a href="#">Growth Oil</a><a href="#">Cleanser</a><a href="#">Serum</a>
+            </div>
+            <div class="mega-column">
+              <h4>GUT & HEALTH</h4>
+              <a href="#">Digestive Mix</a><a href="#">Wellness Capsules</a><a href="#">Fruit Tea</a>
+            </div>
+            <div class="mega-column" style="background: #fafafa; padding: 20px; border-radius: 8px;">
+              <h4>BEST SELLERS</h4>
+              <p style="font-size: 12px; color: #777; line-height:1.5;">Our community's most trusted wellness picks.</p>
+              <a href="#" class="mega-btn" style="background:var(--primary-color); color:#fff; padding:8px 15px; text-decoration:none; font-size:12px; border-radius:4px; display:inline-block; margin-top:10px;">SHOP ALL</a>
+            </div>
           </div>
         </div>
-      </div>
-    </li>
-    <li><a href="/collections/hair-care">OUR STORY</a></li>
-     {% comment %} <li><a href="/collections/skin-care">SKIN CARE</a></li> {% endcomment %}
+      </li>
+      <li><a href="/pages/our-story">OUR STORY</a></li>
     </ul>
-   </div>
     
     <div class="header-icons">
       <div class="header-search">
-       <form action="{{ routes.search_url }}">
-         <input type="search" name="q" placeholder="Search for wellness essentials...">
-       </form>
-     </div>
+        <form action="{{ routes.search_url }}">
+          <input type="search" name="q" placeholder="Search wellness...">
+        </form>
+      </div>
+      
       <a href="{{ routes.search_url }}" class="menu-toggle">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       </a>
       
       <a href="{{ routes.account_url }}">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
       </a>
 
       <a href="{{ routes.cart_url }}">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-        {% if cart.item_count > 0 %}<span class="cart-count">{{ cart.item_count }}</span>{% endif %}
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        {% if cart.item_count > 0 %}<span style="position: absolute; top: -6px; right: -10px; background: var(--primary-color); color: #fff; font-size: 10px; min-width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">{{ cart.item_count }}</span>{% endif %}
       </a>
     </div>
   </div>
 
   <ul class="desktop-nav">
-    {% comment %} <li><a href="/collections/gut-health">GUT HEALTH</a></li>
-    <li><a href="/collections/skin-care">SKIN CARE</a></li>
-    <li><a href="/collections/hair-care">HAIR CARE</a></li> {% endcomment %}
-    <li><a href="/collections/hair-care">Bestseller</a></li>
+    <li><a href="#">Bestseller</a></li>
     <li><a href="#">Skin Care</a></li>
     <li><a href="#">Hair Care</a></li>
     <li><a href="#">Joint Pain</a></li>
@@ -399,14 +405,15 @@ display: flex;
     <li><a href="#">Immunity Boosters</a></li>
     <li><a href="#">Heart Health</a></li>
     <li><a href="#">Liver Care</a></li>
-    {% comment %} <li><a href="#">Bone Health</a></li> {% endcomment %}
-
+    
   </ul>
 </header>
 
 <script>
 function toggleMenu() {
-  document.getElementById('mobileSidebar').classList.toggle('active');
-  document.querySelector('.sidebar-overlay').classList.toggle('active');
+  const sidebar = document.getElementById('mobileSidebar');
+  const overlay = document.querySelector('.sidebar-overlay');
+  sidebar.classList.toggle('active');
+  overlay.classList.toggle('active');
 }
 </script>
