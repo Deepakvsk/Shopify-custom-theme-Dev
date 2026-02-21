@@ -16,11 +16,54 @@
     },
     "custom_product_list_wellwith": {
       "type": "custom-product-list",
-      "name": "Custom Slider",
+      "name": "Custom Product List",
       "settings": {
         "heading": "Featured Products",
         "collection": "frontpage",
         "products_to_show": 8
+      }
+    },
+    "custom_just_launch_row_wellwith": {
+      "type": "custom-just-launch-row",
+      "blocks": {
+        "banner_GmbWCh": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/bnr_4330387_o.jpg",
+            "link": ""
+          }
+        },
+        "banner_wr3bRQ": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/bnr_4328435_o.jpg",
+            "link": ""
+          }
+        },
+        "banner_GHaqCM": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/bnr_4330387_o.jpg",
+            "link": ""
+          }
+        },
+        "banner_iBUECG": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/bnr_4327937_o.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_GmbWCh",
+        "banner_wr3bRQ",
+        "banner_GHaqCM",
+        "banner_iBUECG"
+      ],
+      "name": "Custom Just Launch ",
+      "settings": {
+        "heading": "Just Launched"
       }
     },
     "video_product_reels_fVDc97": {
@@ -71,6 +114,7 @@
   "order": [
     "custom_slider_wellwith",
     "custom_product_list_wellwith",
+    "custom_just_launch_row_wellwith",
     "video_product_reels_fVDc97",
     "custom_liquid_wYgjqE"
   ]
